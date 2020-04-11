@@ -36,7 +36,7 @@ class UserDetails extends Controller {
                 $csrf_tokken = random_int(10000,100000000);
                 $_SESSION["csrf_tokken"] = $csrf_tokken;
                 setcookie("csrf_tokken",$csrf_tokken);
-                $this->view("test/login", array("csrf_tokken" => $csrf_tokken));
+                $this->view("main/login", array("csrf_tokken" => $csrf_tokken));
 
             }else{
 
@@ -46,7 +46,7 @@ class UserDetails extends Controller {
             session_unset();
             session_destroy();
             $_SESSION = Array();
-            header("location: /uesrdetails");
+            header("location: /userdetails");
         }
     }
 
