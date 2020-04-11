@@ -56,6 +56,7 @@
         }
 
         function start () {
+            session_start();
             $route = explode('/', URI);
             //print_r($route[1] );
 
