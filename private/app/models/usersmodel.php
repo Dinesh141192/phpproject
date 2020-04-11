@@ -1,9 +1,10 @@
 <?php
-class UsersModel extends Controller {
+class UsersModel extends Model {
 
     function __construct() {
         parent::__construct();
     }
+   //function Index(){}
     function authorizeUser($username,$password){
         $cl_username = $username;
         $cl_password = $password;
