@@ -23,6 +23,7 @@ class Installer{
                 echo("before execute");
                 $this->db->exec($sql);
             }catch(PDOException $ex){
+                echo($ex->getMessage());
 
             }
         }
