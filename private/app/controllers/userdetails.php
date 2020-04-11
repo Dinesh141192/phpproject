@@ -12,7 +12,7 @@ class UserDetails extends Controller {
         $this->view("template/footer");
     } 
     function Login(){
-        if($_SERVER["request_method"] == "POST"){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
             $csrf_post = htmlentities($_POST["csrf_tokken"]);
             $csrf_cookie = $_COOKIE["csrf_tokken"];
             $cookie_sess = $_SESSION["csrf_tokken"];
