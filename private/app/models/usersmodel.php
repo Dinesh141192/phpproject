@@ -8,11 +8,14 @@ class UsersModel extends Model {
     function authorizeUser($username,$password){
         $cl_username = $username;
         $cl_password = $password;
-        $sql = "SELECT `hash_password`, `first_name`, `last_name` from users where email=?";
+        $sql = "SELECT `hash_password`, `first_name`, `last_name` from `users` where `email`=?";
+        //echo("before");
         $stmt = $this->db->prepare($sql);
+        //echo("after");
         $count = $stmt->execute(Array($cl_username));
         $row = $stmt->fetch();
         $hash_password = $row[0];
+        echo("hash_password" . $hash_password. "<br/>");
         $is_authorized = false;
         if(isset($hash_password)){
             $is_authorized = password_verify($cl_password,$hash_password);

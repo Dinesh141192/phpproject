@@ -26,7 +26,7 @@ class UserDetails extends Controller {
                 $cl_username = htmlentities($_POST["username"]);
                 $cl_password = htmlentities($_POST["password"]);
                 $authorize = $this->UsersModel->authorizeUser($cl_username,$cl_password);
-                if(authorize){
+                if($authorize){
                     header("location: /userdetails");
     
                 }else{

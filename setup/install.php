@@ -12,7 +12,7 @@ class Installer{
             try{
                 $dsn = $this->config["database"]["driver"] . ":" .
                 "host=" . $this->config["database"]["dbhost"] .
-                ":dbname=" . $this->config["database"]["dbname"];
+                ";dbname=" . $this->config["database"]["dbname"];
                 $this->db = new PDO(
                     $dsn
                     , $this->config["database"]["username"]

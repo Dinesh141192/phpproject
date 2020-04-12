@@ -1,5 +1,5 @@
 <?php
-
+//echo(password_hash("4321",PASSWORD_DEFAULT));
     require(__DIR__ . '/private/core/app.php');
 
     //print_r("1");

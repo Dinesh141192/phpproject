@@ -10,4 +10,4 @@ CREATE TABLE users (
     last_login_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-INSERT INTO users (email, hash_password, first_name, last_name, biography) VALUES ("c.dineshreddy14@gmail.com", "$2y$10$nvXp9dqzwZYuacZiweWwWuDdvJ8kXoEnYRvlowHgxJs42s5HhGLJy", "Dinesh", "Challa", "Student");
+INSERT INTO users (email, hash_password, first_name, last_name, biography) VALUES ("c.dineshreddy14@gmail.com", "$2y$10$TGrS5gXRVUn6QIm.zFHvvepAsYlxVAPP2iQhGTzr9FKyD0L/erqa.", "Dinesh", "Challa", "Student");

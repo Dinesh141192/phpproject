@@ -7,7 +7,7 @@ abstract class Model {
     function __construct() {
 
         global $app;
-
+        //echo("Model");
         $this->db = $app->db;
 
     }
