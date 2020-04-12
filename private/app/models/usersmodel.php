@@ -15,7 +15,7 @@ class UsersModel extends Model {
         $count = $stmt->execute(Array($cl_username));
         $row = $stmt->fetch();
         $hash_password = $row[0];
-        echo("hash_password" . $hash_password. "<br/>");
+        //echo("hash_password" . $hash_password. "<br/>");
         $is_authorized = false;
         if(isset($hash_password)){
             $is_authorized = password_verify($cl_password,$hash_password);
@@ -26,8 +26,10 @@ class UsersModel extends Model {
                 $update_sql = "UPDATE `users` set `last_login_date` = CURRENT_TIMESTAMP() where email = ?";
                 $update_stmt = $this->db->prepare($update_sql);
                 $update_stmt->execute(Array($cl_username));
+                return 1;
             }
         }
+        return 0;
     }
 }
 ?>

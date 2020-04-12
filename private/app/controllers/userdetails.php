@@ -16,9 +16,9 @@ class UserDetails extends Controller {
             $csrf_post = htmlentities($_POST["csrf_tokken"]);
             $csrf_cookie = $_COOKIE["csrf_tokken"];
             $csrf_sess = $_SESSION["csrf_tokken"];
-            echo("csrf_post" . $csrf_post);
-            echo("csrf_cookie" . $csrf_cookie);
-            echo("csrf_sess" . $csrf_sess);
+            // echo("csrf_post" . $csrf_post);
+            // echo("csrf_cookie" . $csrf_cookie);
+            // echo("csrf_sess" . $csrf_sess);
 
             if($csrf_sess == $csrf_post && $csrf_sess == $csrf_cookie){
 
@@ -27,7 +27,7 @@ class UserDetails extends Controller {
                 $cl_password = htmlentities($_POST["password"]);
                 $authorize = $this->UsersModel->authorizeUser($cl_username,$cl_password);
                 if($authorize){
-                    header("location: /userdetails");
+                    header("location: /userdetails/");
     
                 }else{
                     echo("Not authorized");
@@ -49,7 +49,8 @@ class UserDetails extends Controller {
             session_unset();
             session_destroy();
             $_SESSION = Array();
-            header("location: /userdetails");
+            // header("location: /userdetails/");
+            $this->view("main/logout");
         }
     }
 
