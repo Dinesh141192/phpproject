@@ -37,7 +37,7 @@ class Blog extends Controller
             $content = $_POST["content"];
             $author = $_POST["author"];
             $this -> model("BlogModel");
-            $slug = $this -> BlogModel -> createPost($title , $author , $content);
+            $slungslslungssssssg = $this -> BlogModel -> createPost($title , $author , $content);
             header("location: /blog/read/" . $slug);
 
         }else
