@@ -11,3 +11,16 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (email, hash_password, first_name, last_name, biography) VALUES ("c.dineshreddy14@gmail.com", "$2y$10$TGrS5gXRVUn6QIm.zFHvvepAsYlxVAPP2iQhGTzr9FKyD0L/erqa.", "Dinesh", "Challa", "Student");
+
+CREATE TABLE posts (
+    slung VARCHAR(128) NOT NULL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT,
+    author VARCHAR(128) NOT NULL,
+     post_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX (author),
+    FOREIGN KEY (author)
+    REFERENCES authors (email)
+);
+INSERT INTO `posts` (slung , title , content , author) VALUES ("post-a" , "Post A" , "<article><h2>Post A<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
+
