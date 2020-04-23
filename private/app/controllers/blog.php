@@ -10,9 +10,9 @@ class Blog extends Controller
         $this -> model("BlogModel");
         $posts = $this -> BlogModel -> getAllPosts();
         $input = Array("posts" => $posts);
-        $this -> view("templet/header");
+        $this -> view("template/header");
         $this -> view("blog/index" , $input);
-        $this -> view("templet/footer");
+        $this -> view("template/footer");
 
     }
     function Read($postId)
@@ -26,7 +26,7 @@ class Blog extends Controller
     function Create()
     {
         $is_auth = isset($_SESSION["username"]);
-        if($is_auth)
+        if(!$is_auth)
         {
             header("location: /blog");
             return;
@@ -37,7 +37,7 @@ class Blog extends Controller
             $content = $_POST["content"];
             $author = $_POST["author"];
             $this -> model("BlogModel");
-            $slungslslungssssssg = $this -> BlogModel -> createPost($title , $author , $content);
+            $slug = $this -> BlogModel -> createPost($title , $author , $content);
             header("location: /blog/read/" . $slug);
 
         }else
