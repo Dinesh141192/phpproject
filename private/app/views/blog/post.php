@@ -2,7 +2,7 @@
 if (isset($_SESSION["username"]))
 {
     ?>
-    <a href = "/blog/update/<?php echo($slug); ?>"/>Update Blog</a>
+    <a href = "/blog/postupdate/<?php echo($slug); ?>"/>Update Blog</a>
     <br/>
     <a href = "/blog/" />View Blogs </a>
     <?php

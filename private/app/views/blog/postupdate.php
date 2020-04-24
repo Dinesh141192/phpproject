@@ -1,6 +1,6 @@
 <h1>Blog Update</h1>
 <form method = "post" action = "/blog/postupdate/<?php echo $slug ?>">
-<input type = "hidden" value = "<?php echo $slug ?>"/>
+<input type = "hidden" value = "<?php echo $slug ?>" name = "slug"/>
 <label for = "title" >Title</label>
 <input type = "text" id = "title" name = "title" value = "<?php echo $title ?>"/>
 <label for = "author">Author</label>

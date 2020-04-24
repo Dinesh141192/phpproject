@@ -50,7 +50,7 @@ class Blog extends Controller
     function PostUpdate($postId)
     {
         $is_auth = isset($_SESSION["username"]);
-        if(!is_auth)
+        if(!$is_auth)
         {
             header("location: /blog");
             return;
