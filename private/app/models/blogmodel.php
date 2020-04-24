@@ -27,7 +27,12 @@ class BlogModel extends Model
          $stmt -> execute(Array($slug , $title , $content , $author));
          return $slug;
      }
-    
-        
-    }
+     function updateBlog($slug , $title , $author , $content)
+     {
+         $update_sql = "UPDATE `post` set `title` = ? , `content` = ? , `author` = ? where `slug` = ?";
+         $update_stmt = $this -> db -> prepare($update_sql);
+         $update_stmt -> execute(Array($title , $content , $author , $slug));
+         return $slug;
+     }
+ }
 ?>

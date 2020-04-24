@@ -47,9 +47,32 @@ class Blog extends Controller
             $this -> view("template/footer");
         }
     }
-
-    
-        
+    function PostUpdate($postId)
+    {
+        $is_auth = isset($_SESSION["username"]);
+        if(!is_auth)
+        {
+            header("location: /blog");
+            return;
+        }
+        if($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $slug = $_POST["slug"];
+            $title = $_POST["title"];
+            $content = $_POST["content"];
+            $author = $_POST["author"];
+            $this -> model("BlogModel");
+            $slug = $this -> BlogModel -> updateBlog($slug , $title , $author , $content);
+            header("location: /blog/read/" . $slug);
+        }
+        else
+        {
+            $this -> model("BlogModel");
+            $post = $this -> BlogModel -> getPostById($postId);
+            $this -> view("blog/postupdate", $post);
+            $this -> view("template/footer");
+        }
     }
+ }
 
 ?>
