@@ -23,4 +23,7 @@ CREATE TABLE posts (
     REFERENCES users (email)
 );
 INSERT INTO `posts` (slug , title , content , author) VALUES ("post-a" , "Post A" , "<article><h2>Post A<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
-
+INSERT INTO `posts` (slug , title , content , author) VALUES ("post-b" , "Post B" , "<article><h2>Post B<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
+INSERT INTO `posts` (slug , title , content , author) VALUES ("post-c" , "Post C" , "<article><h2>Post C<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
+INSERT INTO `posts` (slug , title , content , author) VALUES ("post-d" , "Post D" , "<article><h2>Post D<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
+INSERT INTO `posts` (slug , title , content , author) VALUES ("post-e" , "Post E" , "<article><h2>Post E<h2><section><p>This is a sample article</p></section></article>" , "c.dineshreddy14@gmail.com");
